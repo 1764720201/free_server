@@ -6,8 +6,11 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
-    UsersModule],
+    ConfigModule.forRoot({
+      isGlobal: true
+    }),
+    UsersModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
