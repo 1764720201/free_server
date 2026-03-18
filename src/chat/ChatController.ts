@@ -4,6 +4,7 @@ import { AuthGuard } from "src/auth/auth.guard";
 import { MessageDto } from "./dto/message.dto";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { PaginationDto } from "src/common/dto/pagination.dto";
+import { AskDto } from "./dto/ask.dto";
 
 
 @ApiTags('chat')
@@ -23,5 +24,12 @@ export class ChatController {
     @UseGuards(AuthGuard)
     async history(@Req() req: Request, @Query() query: PaginationDto) {
         return this.chatService.history(req['user'].sub, query)
+    }
+
+    @Post('ask')
+    @HttpCode(HttpStatus.OK)
+    @UseGuards(AuthGuard)
+    async ask(@Body() body: AskDto, @Req() req: Request) {
+        return this.chatService.ask(body.question, req['user'].sub)
     }
 }
