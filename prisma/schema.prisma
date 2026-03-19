@@ -101,3 +101,60 @@ model FundDailyPrice {
   @@unique([code, date])
   @@index([code, date])
 }
+
+/**
+ * 股票/ETF 目录表
+ */
+model SecurityCatalog {
+  id String @id @default(uuid())
+
+  secid     String
+  tradeDate DateTime
+  open      Decimal
+  high      Decimal
+  low       Decimal
+  close     Decimal
+
+  vol    Decimal?
+  amount Decimal?
+
+  pctChg   Decimal?
+  chg      Decimal?
+  turnover Decimal?
+
+  source String @default("east-money-push2his")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([secid, tradeDate])
+  @@index([secid, tradeDate])
+}
+
+/**
+ * 股票/ETF 每日净值表
+ */
+model SecurityDailyPrice {
+  id        String   @id @default(uuid())
+  secid     String
+  tradeDate DateTime
+
+  open  Decimal
+  high  Decimal
+  low   Decimal
+  close Decimal
+
+  vol    Decimal?
+  amount Decimal?
+
+  pctChg   Decimal?
+  chg      Decimal?
+  turnover Decimal?
+  source   String   @default("east-money-push2his")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([secid, tradeDate])
+  @@index([secid, tradeDate])
+}

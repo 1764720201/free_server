@@ -67,3 +67,15 @@ export type FundCatalogSyncRun = Prisma.FundCatalogSyncRunModel
  *  * 基金每日净值表
  */
 export type FundDailyPrice = Prisma.FundDailyPriceModel
+/**
+ * Model SecurityCatalog
+ * *
+ *  * 股票/ETF 目录表
+ */
+export type SecurityCatalog = Prisma.SecurityCatalogModel
+/**
+ * Model SecurityDailyPrice
+ * *
+ *  * 股票/ETF 每日净值表
+ */
+export type SecurityDailyPrice = Prisma.SecurityDailyPriceModel

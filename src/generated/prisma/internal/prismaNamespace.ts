@@ -388,7 +388,9 @@ export const ModelName = {
   ChatMessage: 'ChatMessage',
   FundCatalog: 'FundCatalog',
   FundCatalogSyncRun: 'FundCatalogSyncRun',
-  FundDailyPrice: 'FundDailyPrice'
+  FundDailyPrice: 'FundDailyPrice',
+  SecurityCatalog: 'SecurityCatalog',
+  SecurityDailyPrice: 'SecurityDailyPrice'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -404,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "chatMessage" | "fundCatalog" | "fundCatalogSyncRun" | "fundDailyPrice"
+    modelProps: "user" | "chatMessage" | "fundCatalog" | "fundCatalogSyncRun" | "fundDailyPrice" | "securityCatalog" | "securityDailyPrice"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -778,6 +780,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    SecurityCatalog: {
+      payload: Prisma.$SecurityCatalogPayload<ExtArgs>
+      fields: Prisma.SecurityCatalogFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SecurityCatalogFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SecurityCatalogFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>
+        }
+        findFirst: {
+          args: Prisma.SecurityCatalogFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SecurityCatalogFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>
+        }
+        findMany: {
+          args: Prisma.SecurityCatalogFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>[]
+        }
+        create: {
+          args: Prisma.SecurityCatalogCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>
+        }
+        createMany: {
+          args: Prisma.SecurityCatalogCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SecurityCatalogCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>[]
+        }
+        delete: {
+          args: Prisma.SecurityCatalogDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>
+        }
+        update: {
+          args: Prisma.SecurityCatalogUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>
+        }
+        deleteMany: {
+          args: Prisma.SecurityCatalogDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SecurityCatalogUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SecurityCatalogUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>[]
+        }
+        upsert: {
+          args: Prisma.SecurityCatalogUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityCatalogPayload>
+        }
+        aggregate: {
+          args: Prisma.SecurityCatalogAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSecurityCatalog>
+        }
+        groupBy: {
+          args: Prisma.SecurityCatalogGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SecurityCatalogGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SecurityCatalogCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SecurityCatalogCountAggregateOutputType> | number
+        }
+      }
+    }
+    SecurityDailyPrice: {
+      payload: Prisma.$SecurityDailyPricePayload<ExtArgs>
+      fields: Prisma.SecurityDailyPriceFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SecurityDailyPriceFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SecurityDailyPriceFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>
+        }
+        findFirst: {
+          args: Prisma.SecurityDailyPriceFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SecurityDailyPriceFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>
+        }
+        findMany: {
+          args: Prisma.SecurityDailyPriceFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>[]
+        }
+        create: {
+          args: Prisma.SecurityDailyPriceCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>
+        }
+        createMany: {
+          args: Prisma.SecurityDailyPriceCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SecurityDailyPriceCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>[]
+        }
+        delete: {
+          args: Prisma.SecurityDailyPriceDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>
+        }
+        update: {
+          args: Prisma.SecurityDailyPriceUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>
+        }
+        deleteMany: {
+          args: Prisma.SecurityDailyPriceDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SecurityDailyPriceUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SecurityDailyPriceUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>[]
+        }
+        upsert: {
+          args: Prisma.SecurityDailyPriceUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SecurityDailyPricePayload>
+        }
+        aggregate: {
+          args: Prisma.SecurityDailyPriceAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSecurityDailyPrice>
+        }
+        groupBy: {
+          args: Prisma.SecurityDailyPriceGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SecurityDailyPriceGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SecurityDailyPriceCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SecurityDailyPriceCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -888,6 +1038,48 @@ export const FundDailyPriceScalarFieldEnum = {
 } as const
 
 export type FundDailyPriceScalarFieldEnum = (typeof FundDailyPriceScalarFieldEnum)[keyof typeof FundDailyPriceScalarFieldEnum]
+
+
+export const SecurityCatalogScalarFieldEnum = {
+  id: 'id',
+  secid: 'secid',
+  tradeDate: 'tradeDate',
+  open: 'open',
+  high: 'high',
+  low: 'low',
+  close: 'close',
+  vol: 'vol',
+  amount: 'amount',
+  pctChg: 'pctChg',
+  chg: 'chg',
+  turnover: 'turnover',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SecurityCatalogScalarFieldEnum = (typeof SecurityCatalogScalarFieldEnum)[keyof typeof SecurityCatalogScalarFieldEnum]
+
+
+export const SecurityDailyPriceScalarFieldEnum = {
+  id: 'id',
+  secid: 'secid',
+  tradeDate: 'tradeDate',
+  open: 'open',
+  high: 'high',
+  low: 'low',
+  close: 'close',
+  vol: 'vol',
+  amount: 'amount',
+  pctChg: 'pctChg',
+  chg: 'chg',
+  turnover: 'turnover',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SecurityDailyPriceScalarFieldEnum = (typeof SecurityDailyPriceScalarFieldEnum)[keyof typeof SecurityDailyPriceScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1089,6 +1281,8 @@ export type GlobalOmitConfig = {
   fundCatalog?: Prisma.FundCatalogOmit
   fundCatalogSyncRun?: Prisma.FundCatalogSyncRunOmit
   fundDailyPrice?: Prisma.FundDailyPriceOmit
+  securityCatalog?: Prisma.SecurityCatalogOmit
+  securityDailyPrice?: Prisma.SecurityDailyPriceOmit
 }
 
 /* Types for Logging */

@@ -55,7 +55,9 @@ export const ModelName = {
   ChatMessage: 'ChatMessage',
   FundCatalog: 'FundCatalog',
   FundCatalogSyncRun: 'FundCatalogSyncRun',
-  FundDailyPrice: 'FundDailyPrice'
+  FundDailyPrice: 'FundDailyPrice',
+  SecurityCatalog: 'SecurityCatalog',
+  SecurityDailyPrice: 'SecurityDailyPrice'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -145,6 +147,48 @@ export const FundDailyPriceScalarFieldEnum = {
 } as const
 
 export type FundDailyPriceScalarFieldEnum = (typeof FundDailyPriceScalarFieldEnum)[keyof typeof FundDailyPriceScalarFieldEnum]
+
+
+export const SecurityCatalogScalarFieldEnum = {
+  id: 'id',
+  secid: 'secid',
+  tradeDate: 'tradeDate',
+  open: 'open',
+  high: 'high',
+  low: 'low',
+  close: 'close',
+  vol: 'vol',
+  amount: 'amount',
+  pctChg: 'pctChg',
+  chg: 'chg',
+  turnover: 'turnover',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SecurityCatalogScalarFieldEnum = (typeof SecurityCatalogScalarFieldEnum)[keyof typeof SecurityCatalogScalarFieldEnum]
+
+
+export const SecurityDailyPriceScalarFieldEnum = {
+  id: 'id',
+  secid: 'secid',
+  tradeDate: 'tradeDate',
+  open: 'open',
+  high: 'high',
+  low: 'low',
+  close: 'close',
+  vol: 'vol',
+  amount: 'amount',
+  pctChg: 'pctChg',
+  chg: 'chg',
+  turnover: 'turnover',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SecurityDailyPriceScalarFieldEnum = (typeof SecurityDailyPriceScalarFieldEnum)[keyof typeof SecurityDailyPriceScalarFieldEnum]
 
 
 export const SortOrder = {
