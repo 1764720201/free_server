@@ -385,7 +385,10 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
-  ChatMessage: 'ChatMessage'
+  ChatMessage: 'ChatMessage',
+  FundCatalog: 'FundCatalog',
+  FundCatalogSyncRun: 'FundCatalogSyncRun',
+  FundDailyPrice: 'FundDailyPrice'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -401,7 +404,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "chatMessage"
+    modelProps: "user" | "chatMessage" | "fundCatalog" | "fundCatalogSyncRun" | "fundDailyPrice"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -553,6 +556,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    FundCatalog: {
+      payload: Prisma.$FundCatalogPayload<ExtArgs>
+      fields: Prisma.FundCatalogFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.FundCatalogFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.FundCatalogFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>
+        }
+        findFirst: {
+          args: Prisma.FundCatalogFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.FundCatalogFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>
+        }
+        findMany: {
+          args: Prisma.FundCatalogFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>[]
+        }
+        create: {
+          args: Prisma.FundCatalogCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>
+        }
+        createMany: {
+          args: Prisma.FundCatalogCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.FundCatalogCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>[]
+        }
+        delete: {
+          args: Prisma.FundCatalogDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>
+        }
+        update: {
+          args: Prisma.FundCatalogUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>
+        }
+        deleteMany: {
+          args: Prisma.FundCatalogDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.FundCatalogUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.FundCatalogUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>[]
+        }
+        upsert: {
+          args: Prisma.FundCatalogUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogPayload>
+        }
+        aggregate: {
+          args: Prisma.FundCatalogAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateFundCatalog>
+        }
+        groupBy: {
+          args: Prisma.FundCatalogGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FundCatalogGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.FundCatalogCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FundCatalogCountAggregateOutputType> | number
+        }
+      }
+    }
+    FundCatalogSyncRun: {
+      payload: Prisma.$FundCatalogSyncRunPayload<ExtArgs>
+      fields: Prisma.FundCatalogSyncRunFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.FundCatalogSyncRunFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.FundCatalogSyncRunFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>
+        }
+        findFirst: {
+          args: Prisma.FundCatalogSyncRunFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.FundCatalogSyncRunFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>
+        }
+        findMany: {
+          args: Prisma.FundCatalogSyncRunFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>[]
+        }
+        create: {
+          args: Prisma.FundCatalogSyncRunCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>
+        }
+        createMany: {
+          args: Prisma.FundCatalogSyncRunCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.FundCatalogSyncRunCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>[]
+        }
+        delete: {
+          args: Prisma.FundCatalogSyncRunDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>
+        }
+        update: {
+          args: Prisma.FundCatalogSyncRunUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>
+        }
+        deleteMany: {
+          args: Prisma.FundCatalogSyncRunDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.FundCatalogSyncRunUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.FundCatalogSyncRunUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>[]
+        }
+        upsert: {
+          args: Prisma.FundCatalogSyncRunUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundCatalogSyncRunPayload>
+        }
+        aggregate: {
+          args: Prisma.FundCatalogSyncRunAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateFundCatalogSyncRun>
+        }
+        groupBy: {
+          args: Prisma.FundCatalogSyncRunGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FundCatalogSyncRunGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.FundCatalogSyncRunCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FundCatalogSyncRunCountAggregateOutputType> | number
+        }
+      }
+    }
+    FundDailyPrice: {
+      payload: Prisma.$FundDailyPricePayload<ExtArgs>
+      fields: Prisma.FundDailyPriceFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.FundDailyPriceFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.FundDailyPriceFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>
+        }
+        findFirst: {
+          args: Prisma.FundDailyPriceFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.FundDailyPriceFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>
+        }
+        findMany: {
+          args: Prisma.FundDailyPriceFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>[]
+        }
+        create: {
+          args: Prisma.FundDailyPriceCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>
+        }
+        createMany: {
+          args: Prisma.FundDailyPriceCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.FundDailyPriceCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>[]
+        }
+        delete: {
+          args: Prisma.FundDailyPriceDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>
+        }
+        update: {
+          args: Prisma.FundDailyPriceUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>
+        }
+        deleteMany: {
+          args: Prisma.FundDailyPriceDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.FundDailyPriceUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.FundDailyPriceUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>[]
+        }
+        upsert: {
+          args: Prisma.FundDailyPriceUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FundDailyPricePayload>
+        }
+        aggregate: {
+          args: Prisma.FundDailyPriceAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateFundDailyPrice>
+        }
+        groupBy: {
+          args: Prisma.FundDailyPriceGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FundDailyPriceGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.FundDailyPriceCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FundDailyPriceCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -614,6 +839,55 @@ export const ChatMessageScalarFieldEnum = {
 } as const
 
 export type ChatMessageScalarFieldEnum = (typeof ChatMessageScalarFieldEnum)[keyof typeof ChatMessageScalarFieldEnum]
+
+
+export const FundCatalogScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  name: 'name',
+  type: 'type',
+  pinyinShort: 'pinyinShort',
+  pinyinFull: 'pinyinFull',
+  source: 'source',
+  syncedAt: 'syncedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FundCatalogScalarFieldEnum = (typeof FundCatalogScalarFieldEnum)[keyof typeof FundCatalogScalarFieldEnum]
+
+
+export const FundCatalogSyncRunScalarFieldEnum = {
+  id: 'id',
+  source: 'source',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  status: 'status',
+  totalFetched: 'totalFetched',
+  upsertedCount: 'upsertedCount',
+  updatedCount: 'updatedCount',
+  insertedCount: 'insertedCount',
+  errorMessage: 'errorMessage',
+  runDate: 'runDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FundCatalogSyncRunScalarFieldEnum = (typeof FundCatalogSyncRunScalarFieldEnum)[keyof typeof FundCatalogSyncRunScalarFieldEnum]
+
+
+export const FundDailyPriceScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  date: 'date',
+  nav: 'nav',
+  accNav: 'accNav',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FundDailyPriceScalarFieldEnum = (typeof FundDailyPriceScalarFieldEnum)[keyof typeof FundDailyPriceScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -685,6 +959,34 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Decimal'
+ */
+export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
+    
+
+
+/**
+ * Reference to a field of type 'Decimal[]'
+ */
+export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+/**
+ * Reference to a field of type 'Float[]'
+ */
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
 
 /**
@@ -784,6 +1086,9 @@ export type PrismaClientOptions = ({
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   chatMessage?: Prisma.ChatMessageOmit
+  fundCatalog?: Prisma.FundCatalogOmit
+  fundCatalogSyncRun?: Prisma.FundCatalogSyncRunOmit
+  fundDailyPrice?: Prisma.FundDailyPriceOmit
 }
 
 /* Types for Logging */

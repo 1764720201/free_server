@@ -45,6 +45,25 @@ export { Prisma }
 export type User = Prisma.UserModel
 /**
  * Model ChatMessage
- * 
+ * *
+ *  * 聊天消息表
  */
 export type ChatMessage = Prisma.ChatMessageModel
+/**
+ * Model FundCatalog
+ * *
+ *  * 基金目录表
+ */
+export type FundCatalog = Prisma.FundCatalogModel
+/**
+ * Model FundCatalogSyncRun
+ * *
+ *  * 基金目录同步日志
+ */
+export type FundCatalogSyncRun = Prisma.FundCatalogSyncRunModel
+/**
+ * Model FundDailyPrice
+ * *
+ *  * 基金每日净值表
+ */
+export type FundDailyPrice = Prisma.FundDailyPriceModel

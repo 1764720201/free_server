@@ -52,7 +52,10 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
-  ChatMessage: 'ChatMessage'
+  ChatMessage: 'ChatMessage',
+  FundCatalog: 'FundCatalog',
+  FundCatalogSyncRun: 'FundCatalogSyncRun',
+  FundDailyPrice: 'FundDailyPrice'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -93,6 +96,55 @@ export const ChatMessageScalarFieldEnum = {
 } as const
 
 export type ChatMessageScalarFieldEnum = (typeof ChatMessageScalarFieldEnum)[keyof typeof ChatMessageScalarFieldEnum]
+
+
+export const FundCatalogScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  name: 'name',
+  type: 'type',
+  pinyinShort: 'pinyinShort',
+  pinyinFull: 'pinyinFull',
+  source: 'source',
+  syncedAt: 'syncedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FundCatalogScalarFieldEnum = (typeof FundCatalogScalarFieldEnum)[keyof typeof FundCatalogScalarFieldEnum]
+
+
+export const FundCatalogSyncRunScalarFieldEnum = {
+  id: 'id',
+  source: 'source',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  status: 'status',
+  totalFetched: 'totalFetched',
+  upsertedCount: 'upsertedCount',
+  updatedCount: 'updatedCount',
+  insertedCount: 'insertedCount',
+  errorMessage: 'errorMessage',
+  runDate: 'runDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FundCatalogSyncRunScalarFieldEnum = (typeof FundCatalogSyncRunScalarFieldEnum)[keyof typeof FundCatalogSyncRunScalarFieldEnum]
+
+
+export const FundDailyPriceScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  date: 'date',
+  nav: 'nav',
+  accNav: 'accNav',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FundDailyPriceScalarFieldEnum = (typeof FundDailyPriceScalarFieldEnum)[keyof typeof FundDailyPriceScalarFieldEnum]
 
 
 export const SortOrder = {

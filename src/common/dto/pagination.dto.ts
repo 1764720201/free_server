@@ -1,11 +1,14 @@
-import { IsNumber, IsOptional } from "class-validator"
+import { IsInt, IsOptional, Max, Min } from "class-validator"
 
 export class PaginationDto {
-    @IsNumber()
+    @IsInt()
     @IsOptional()
+    @Min(1)
     pageNo: number = 1
 
-    @IsNumber()
+    @IsInt()
     @IsOptional()
+    @Min(1)
+    @Max(100)
     pageSize: number = 10
 }

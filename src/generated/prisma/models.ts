@@ -10,4 +10,7 @@
  */
 export type * from './models/User.js'
 export type * from './models/ChatMessage.js'
+export type * from './models/FundCatalog.js'
+export type * from './models/FundCatalogSyncRun.js'
+export type * from './models/FundDailyPrice.js'
 export type * from './commonInputTypes.js'

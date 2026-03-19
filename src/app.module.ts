@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { ChatModule } from './chat/ChatModule';
 import { VectorStoreModule } from './vectorStore/vectorStore.module';
+import { FundsModule } from './funds/funds.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { VectorStoreModule } from './vectorStore/vectorStore.module';
     UsersModule,
     AuthModule,
     ChatModule,
-    VectorStoreModule
+    VectorStoreModule,
+    FundsModule
   ],
   controllers: [AppController],
   providers: [AppService],

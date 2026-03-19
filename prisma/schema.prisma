@@ -28,6 +28,9 @@ model User {
   messages  ChatMessage[]
 }
 
+/**
+ * 聊天消息表
+ */
 model ChatMessage {
   id        String   @id @default(uuid())
   user      User     @relation(fields: [userId], references: [id])
@@ -35,4 +38,66 @@ model ChatMessage {
   role      String
   content   String
   createdAt DateTime @default(now())
+}
+
+/**
+ * 基金目录表
+ */
+model FundCatalog {
+  id          String   @id @default(uuid())
+  code        String   @unique
+  name        String
+  type        String?
+  pinyinShort String?
+  pinyinFull  String?
+  source      String   @default("east-money")
+  syncedAt    DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([name])
+  @@index([pinyinShort])
+  @@index([pinyinFull])
+}
+
+/**
+ * 基金目录同步日志
+ */
+model FundCatalogSyncRun {
+  id            String    @id @default(uuid())
+  source        String    @default("east-money")
+  startedAt     DateTime  @default(now())
+  finishedAt    DateTime?
+  status        String // "running" | "success" | "failed"
+  totalFetched  Int?
+  upsertedCount Int?
+  updatedCount  Int?
+  insertedCount Int?
+  errorMessage  String?
+
+  runDate DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([runDate])
+}
+
+/**
+ * 基金每日净值表
+ */
+model FundDailyPrice {
+  id        String   @id @default(uuid())
+  code      String
+  date      DateTime
+  nav       Decimal
+  accNav    Decimal?
+  source    String   @default("east-money-fundgz")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([code, date])
+  @@index([code, date])
 }
